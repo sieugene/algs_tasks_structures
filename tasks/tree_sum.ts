@@ -69,3 +69,19 @@ function treeSum(tree) {
 }
 
 console.log(treeSum(tree))
+
+const recursive = (tree) => {
+  let sum = 0
+  tree.forEach((node) => {
+    sum += node.v
+    if (!node.c) {
+      return node.v
+    }
+    sum += recursive(node.c)
+  })
+  return sum
+}
+
+console.log(recursive(tree))
+
+const iteration = (tree) => {}
