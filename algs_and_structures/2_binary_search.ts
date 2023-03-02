@@ -39,3 +39,4 @@ function recursiveBinarySearch(array, item, start, end) {
 
 console.log(recursiveBinarySearch(array, 0, 0, array.length))
 console.log(count)
+//time O(log2n)
