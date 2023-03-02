@@ -12,3 +12,4 @@ function linearSearch(array, item) {
 
 console.log(linearSearch(array, 1))
 console.log('count = ', count)
+// O(n)
