@@ -25,3 +25,4 @@ function quickSort(array) {
 console.log(quickSort(arr))
 console.log('count', count)
 // Сортировка Хоара
+// Время O(log2n*n)
