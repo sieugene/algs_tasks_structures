@@ -24,3 +24,4 @@ function quickSort(array) {
 
 console.log(quickSort(arr))
 console.log('count', count)
+// Сортировка Хоара
