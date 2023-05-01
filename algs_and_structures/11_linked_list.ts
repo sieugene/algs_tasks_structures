@@ -30,7 +30,7 @@ class LinkedList {
             result.push(node.value)
             node = node.next
         }
-        console.log(result);;
+        console.log(result);
     }
 }
 
