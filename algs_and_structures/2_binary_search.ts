@@ -37,6 +37,24 @@ function recursiveBinarySearch(array, item, start, end) {
     }
 }
 
+        //отсортированный массив                     
+function binarySearchWithPointers(array, search) {
+         let left = 0
+         let right = array.length - 1
+         
+         while (left < right) {
+            const mid = Math.floor((left + right) / 2)
+
+            if (arr[mid] >= search) {
+                right = mid
+            } else {
+                left = mid + 1
+            }
+          }
+     
+        return arr[right] === search ? right : -1 
+}
+
 console.log(recursiveBinarySearch(array, 0, 0, array.length))
 console.log(count)
 //time O(log2n)
