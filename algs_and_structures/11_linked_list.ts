@@ -14,7 +14,7 @@ class LinkedList {
     }
      
     append(value) {
-       const node = new Node(data)
+       const node = new Node(value)
 
         if (this.tail) {
             this.tail.next = node
@@ -109,7 +109,7 @@ insertAfter(after, value) {
   }
 }
 const list = new LinkedList()
-list.add(5)
-list.add(3)
+list.append(5)
+list.prepend(3)
 
 list.print()
