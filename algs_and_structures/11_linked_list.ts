@@ -14,24 +14,20 @@ class LinkedList {
     }
      
     append(value) {
-        if (this.size === 0) {
-            this.head = new Node(value)
-            
-            this.size += 1
-            return true
+       const node = new Node(data)
+
+        if (this.tail) {
+            this.tail.next = node
         }
-        
-        let node = this.head
-       
-        while (node.next) {
-            node = node.next
-        }
-        
-        let newNode = new Node(value)
-        node.next = newNode
+
+         if (!this.head) {
+            this.head = node
+         }
+
+         this.tail = node
         
         this.size += 1
-    }
+     }
     
     prepend(value) {
         let node = new Node(value, this.head)
@@ -106,7 +102,7 @@ insertAfter(after, value) {
       }
     }
 
-    if (this.tail === value) {
+    if (this.tail.value === value) {
       this.tail = current
     }
     this.size -= 1
