@@ -1,7 +1,28 @@
 // Поиск кратчайшего пути в графе
 // В алгоритме Дейкстры учитывается и длина пройденного ребра (называемый вес)
 
-const graph = {}
+function findNodeLowestCost(costs, processed) {
+    let lowestCost = 100000000
+    let lowestNode;
+    
+    Object.keys(costs).forEach(node => {
+        let cost = costs[node]
+        if (cost < lowestCost && !processed.includes(node)) {
+            lowestCost = cost
+            lowestNode = node
+        }
+    })
+    
+    return lowestNode
+}
+
+type GraphType = {
+    [key: string]: {
+        [key: string]: number
+    } | {}
+}
+
+const graph: GraphType = {}
 graph.a = {b: 2, c: 1}
 graph.b = {f: 7}
 graph.c = {d: 5, e: 2}
@@ -10,9 +31,9 @@ graph.e = {f: 1}
 graph.f = {g: 1}
 graph.g = {}
 
-function shortPath(graph, start, end) {
-    const costs = {}
-    const processed = []
+function shortPath(graph: GraphType, start: string, end: string) {
+    const costs = {} as GraphType
+    const processed = [] as GraphType[]
     let neighbors = {}
     
     Object.keys(graph).forEach(node => {
@@ -43,19 +64,6 @@ function shortPath(graph, start, end) {
 }
 
 
-function findNodeLowestCost(costs, processed) {
-    let lowestCost = 100000000
-    let lowestNode;
-    
-    Object.keys(costs).forEach(node => {
-        let cost = costs[node]
-        if (cost < lowestCost && !processed.includes(node)) {
-            lowestCost = cost
-            lowestNode = node
-        }
-    })
-    
-    return lowestNode
-}
+
 
 console.log(shortPath(graph, 'a', 'g'));
