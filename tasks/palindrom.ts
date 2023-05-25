@@ -42,28 +42,29 @@ const isPalindromeWithSymbolsAndSpace = (str) => {
      let right = str.length - 1
 
      while (left < right) {
-	const leftChar = str[left]
-	const rightChar = str[right]
+	  const leftChar = str[left]
+	  const rightChar = str[right]
 	
-	if (!isEquil(leftChar)) {
-	    left++
-	    continue
-	}
+	  if (!isEquil(leftChar)) {
+	      left++
+	      continue
+	  }
 	
-	if (!isEquil(rightChar)) {
-            right--
-	    continue
-	}
+	  if (!isEquil(rightChar)) {
+           right--
+	      continue
+	  }
 	
-        if (leftChar.toLowerCase() !== rightChar.toLowerCase()) {
-          return false
-	}
+       if (leftChar.toLowerCase() !== rightChar.toLowerCase()) {
+            return false
+	  }
 	     
-        left++
-	right--
+       left++
+	  right--
      }
+
      return true
 }
                                       
 console.log(isPalindrome("aaaZzaAa"))
-console.log(isPalindromeWithSymbolsAndSpace("Madam, I'm Adam"))
+console.log(isPalindromeWithSymbolsAndSpace("Madam, I'm Adam!"))
