@@ -34,7 +34,7 @@ const isPalindrome = (str) => {
 // Madam, I'm Adam
 
 const isEquil = (char) => {
-   return leftChar.toLoweCase() !== rightChar.toUpperCase()
+   return char.toLowerCase() !== char.toUpperCase()
 }
 
 const isPalindromeWithSymbolsAndSpace = (str) => {
@@ -46,13 +46,13 @@ const isPalindromeWithSymbolsAndSpace = (str) => {
 	const rightChar = str[right]
 	
 	if (!isEquil(leftChar)) {
-	    continue
 	    left++
+	    continue
 	}
 	
 	if (!isEquil(rightChar)) {
+            right--
 	    continue
-	    right--
 	}
 	
         if (leftChar.toLowerCase() !== rightChar.toLowerCase()) {
@@ -66,3 +66,4 @@ const isPalindromeWithSymbolsAndSpace = (str) => {
 }
                                       
 console.log(isPalindrome("aaaZzaAa"))
+console.log(isPalindromeWithSymbolsAndSpace("Madam, I'm Adam"))
