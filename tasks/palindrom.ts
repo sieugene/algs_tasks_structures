@@ -12,10 +12,10 @@
 //     return true;
 // }
 
-<!-- function palindrom(word) {
-  word = word.toLowerCase()
-  return word === word.split("").reverse().join("")
-} -->
+// function palindrom(word) {
+//   word = word.toLowerCase()
+//   return word === word.split("").reverse().join("")
+//}
 
 const isPalindrome = (str) => {
      let left = 0
@@ -25,6 +25,40 @@ const isPalindrome = (str) => {
         if (str[left] !== str[right]) {
               return false
 	}
+        left++
+	right--
+     }
+     return true
+}
+
+// Madam, I'm Adam
+
+const isEquil = (char) => {
+   return leftChar.toLoweCase() !== rightChar.toUpperCase()
+}
+
+const isPalindromeWithSymbolsAndSpace = (str) => {
+     let left = 0
+     let right = str.length - 1
+
+     while (left < right) {
+	const leftChar = str[left]
+	const rightChar = str[right]
+	
+	if (!isEquil(leftChar)) {
+	    continue
+	    left++
+	}
+	
+	if (!isEquil(rightChar)) {
+	    continue
+	    right--
+	}
+	
+        if (leftChar.toLowerCase() !== rightChar.toLowerCase()) {
+          return false
+	}
+	     
         left++
 	right--
      }
