@@ -17,9 +17,7 @@ function findNodeLowestCost(costs, processed) {
 }
 
 type GraphType = {
-    [key: string]: {
-        [key: string]: number
-    } | {}
+  [key: string]: number | {}
 }
 
 const graph: GraphType = {}
@@ -31,7 +29,7 @@ graph.e = {f: 1}
 graph.f = {g: 1}
 graph.g = {}
 
-function shortPath(graph: GraphType, start: string, end: string) {
+function shortPath(graph, start: string, end: string) {
     const costs = {} as GraphType
     const processed = [] as GraphType[]
     let neighbors = {}
